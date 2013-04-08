@@ -89,7 +89,7 @@
                     <hostedWebapp>war</hostedWebapp>
                     <localWorkers>4</localWorkers>
                     <compileReport>false</compileReport>
-                    <module>org.jboss.dmr.DMR</module>
+                    <module>org.jboss.dmr.DMRClient</module>
                 </configuration>
                 <executions>
                     <execution>
