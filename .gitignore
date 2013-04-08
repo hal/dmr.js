@@ -2,4 +2,6 @@ scripts/node_modules
 target
 war/WEB-INF/lib
 war/WEB-INF/deploy
+gwt-unitCache
+war/dmr_gwt
 
