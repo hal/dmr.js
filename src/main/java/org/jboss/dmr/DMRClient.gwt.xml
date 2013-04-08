@@ -23,6 +23,9 @@
 
     <entry-point class='org.jboss.dmr.client.Export'/>
 
+    <collapse-all-properties />
+    <add-linker name="sso" />
+
     <source path='client'/>
 
 </module>
