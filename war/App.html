@@ -9,9 +9,13 @@
 
         function executeRequest() {
 
+            var url = "http://as7-preview.dyndns.org:9990/management";
+
             // access EC2 demo instance
             http = new XMLHttpRequest();
-            http.open("POST", "http://as7-preview.dyndns.org:9990/management", true);
+            http.withCredentials = true;
+
+            http.open("POST", url, true);
 
             // async response handler
             http.onreadystatechange =function()
