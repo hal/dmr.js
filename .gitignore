@@ -1,0 +1,5 @@
+scripts/node_modules
+target
+war/WEB-INF/lib
+war/WEB-INF/deploy
+

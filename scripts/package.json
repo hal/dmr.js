@@ -1,0 +1,10 @@
+{
+    "name": "http-server",
+    "preferGlobal": true,
+    "version": "0.1.0",
+    "author": "Heiko Braun",
+    "description": "a simple command-line http server",
+    "dependencies" : {
+        "connect"   :  "*"
+    }
+}
