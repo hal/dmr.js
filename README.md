@@ -29,6 +29,7 @@ For an introduction to DMR please refer to the [JBoss Wiki](https://docs.jboss.o
 <script>
 // access EC2 demo instance
 http = new XMLHttpRequest();
+http.withCredentials = true;
 http.open("POST", "http://as7-preview.dyndns.org:9990/management", true);
 
 // async response handler
