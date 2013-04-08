@@ -29,7 +29,18 @@ For an introduction to DMR please refer to the [JBoss Wiki](https://docs.jboss.o
 <script>
 // access EC2 demo instance
 http = new XMLHttpRequest();
-http.open("POST", "http://as7-preview.dyndns.org:9990/management", false);
+http.open("POST", "http://as7-preview.dyndns.org:9990/management", true);
+
+// async response handler
+http.onreadystatechange =function()
+{
+    if (http.readyState==4 && http.status==200)
+    {
+        // decode response
+        response = dmr.ModelNode.fromBase64(http.responseText);
+        alert(response.get("result").asString());
+    }
+}
 
 // content type headers for DMR API
 http.setRequestHeader("Content-type","application/dmr-encoded");
@@ -43,11 +54,6 @@ op.get("name").set("release-version");
 
 // send as base64 encoded
 http.send(op.toBase64String());
-
-// decode response
-response = dmr.ModelNode.fromBase64(http.responseText);
-
-alert(response.get("result").asString());
 
 </script>
 ```
@@ -74,6 +80,16 @@ node scripts/server.js
 ### Point your browser to
 
 [http://localhost:9000/App.html](http://localhost:9000/App.html)
+
+
+## Known Issues
+
+### CORS Trouble
+
+- It requires a patched AS7 instance if not running on the host.
+- Some browsers require extra steps to get the authentication working
+
+For a good summary of all the challenges see [Harald's Post](http://haraldpehl.blogspot.de/2013/03/independent-jboss-admin-console.html )
 
 
 
