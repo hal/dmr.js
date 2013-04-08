@@ -1,4 +1,10 @@
-# Prerequistes
+
+# dmr.js
+
+JavaScript library to execute operations on the JBoss AS7 DMR API.
+For an introduction to DMR please refer to the [JBoss Wiki](https://docs.jboss.org/author/display/AS7/Detyped+management+and+the+jboss-dmr+library)
+
+## Prerequistes
 
 - node.js
 - npm
@@ -53,7 +59,7 @@ cd scripts
 npm install
 ```
 
-### Build the GWT module
+### Build the JS module
 
 ```
 mvn clean install
