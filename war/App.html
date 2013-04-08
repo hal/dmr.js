@@ -3,18 +3,42 @@
 <head>
 
     <title>dmr.js</title>
-    <!-- proper charset -->
-    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-
     <script type="text/javascript" language="javascript" src="dmr.js/dmr.js.nocache.js"></script>
 
+    <script>
+
+        function executeRequest() {
+
+            // access EC2 demo instance
+            http = new XMLHttpRequest();
+            http.open("POST", "http://as7-preview.dyndns.org:9990/management", false);
+
+            // content type headers for DMR API
+            http.setRequestHeader("Content-type","application/dmr-encoded");
+            http.setRequestHeader("Accept","application/dmr-encoded");
+
+
+            // create an operation
+            op = new dmr.ModelNode();
+            op.get("operation").set("read-attribute");
+            op.get("address").setEmptyList();
+            op.get("name").set("release-version");
+
+            // send as base64 encoded
+            http.send(op.toBase64String());
+
+            // decode response
+            response = dmr.ModelNode.fromBase64(http.responseText);
+
+            alert(response.get("result").asString());
+        }
+    </script>
 </head>
 <body>
 
-<!-- history iframe required on IE -->
-<iframe src="javascript:''" id="__gwt_historyFrame" style="width:0px;height:0px;border:0px"></iframe>
-
 <!-- pre load images-->
 <h1>JBoss AS7 DMR with in plain JS</h1>
+
+<input type="submit" name="executeRequest" onclick="executeRequest()"/>
 </body >
 </html>
