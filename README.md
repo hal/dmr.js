@@ -84,9 +84,9 @@ node scripts/server.js
 
 ## Known Issues
 
-### CORS Trouble
+### CORS Problems
 
-- It requires a patched AS7 instance if not running on the host.
+- It requires a patched AS7 instance if not running on the same host.
 - Some browsers require extra steps to get the authentication working
 
 For a good summary of all the challenges see [Harald's Post](http://haraldpehl.blogspot.de/2013/03/independent-jboss-admin-console.html )
