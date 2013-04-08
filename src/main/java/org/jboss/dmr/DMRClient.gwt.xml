@@ -18,7 +18,7 @@
   ~ MA  02110-1301, USA.
   -->
 
-<module rename-to='dmr_gwt'>
+<module rename-to='dmr.js'>
     <inherits name='org.jboss.dmr.DMR'/>
 
     <entry-point class='org.jboss.dmr.client.Export'/>
