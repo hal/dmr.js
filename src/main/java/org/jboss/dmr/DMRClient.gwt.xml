@@ -22,6 +22,7 @@
     <inherits name='org.jboss.dmr.DMR'/>
 
     <entry-point class='org.jboss.dmr.client.Export'/>
+    <set-property name="export" value="yes"/>
 
     <collapse-all-properties />
     <add-linker name="sso" />
